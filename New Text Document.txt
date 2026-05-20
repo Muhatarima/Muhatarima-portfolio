@@ -1,0 +1,39 @@
+ঠিক আছে! তাহলে শুধু এই দুটো জায়গা মনে রাখো —
+
+---
+
+**📁 Project add করতে (২ জায়গায়):**
+
+**জায়গা ১ — Card (HTML)**
+`id="projectsGrid"` এর ভেতরে যেকোনো existing card copy করে paste করো, শুধু `onclick="openModal(0)"` এর number বদলাও — নতুনটা হবে `openModal(3)`, পরেরটা `openModal(4)` এভাবে।
+
+**জায়গা ২ — Modal data (JS)**
+`const projects=[` এই array-এ শেষ `}` এর পর comma দিয়ে নতুন object add করো:
+```js
+{
+  name:'Project Name',
+  tags:['React','Node.js'],
+  desc:'Short description',
+  tech:'Tech details',
+  challenge:'What was hard',
+  future:'Future plans',
+  live:'https://...',
+  github:'https://...'
+}
+```
+
+---
+
+**💼 Experience add করতে (১ জায়গায়):**
+
+`<!-- EXPERIENCE -->` section-এ existing `exp-card` div copy করে paste করো, 4টা জিনিস বদলাও:
+```html
+<div class="exp-role">Job Title</div>
+<div class="exp-org">Company Name</div>
+<div class="exp-period">2025 – Present</div>
+<div class="exp-desc">Description...</div>
+```
+
+---
+
+**💡 Tip:** VS Code-এ open করলে `Ctrl+F` দিয়ে `const projects=` বা `<!-- EXPERIENCE -->` search করলেই instantly পেয়ে যাবে।
