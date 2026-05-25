@@ -265,13 +265,13 @@ section{padding:5rem 0}
     <div class="hero-inner">
       <div>
         
-        <h1 class="hero-name">Muhatarima<br/><span>Medha</span></h1>
+        <h1 class="hero-name" style="white-space:nowrap">Muhata<span style="background:linear-gradient(135deg,var(--purple) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent">rima</span></h1>
         <p class="hero-title">
           <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
         </p>
         <p class="hero-desc">Building seamless full-stack experiences — from clean UIs to robust backends, turning complex ideas into real-world applications.</p>
         <div class="hero-btns">
-          <a href="#" class="btn-primary" id="resumeBtn" onclick="alert('Resume will be available soon!'); return false;">
+          <a href="https://drive.google.com/uc?export=download&id=1AYr1TrgLMiR_-OuwVmnXr3or4kuuKs8A" target="_blank" class="btn-primary" id="resumeBtn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Resume
           </a>
@@ -336,7 +336,12 @@ section{padding:5rem 0}
         <div class="about-card">
           <div class="about-card-icon">◇</div>
           <div class="about-card-title">Teaching</div>
-          <div class="about-card-text">Making math click for students is truly fulfilling</div>
+          <div class="about-card-text">Making math click for students is genuinely fulfilling.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">⬡</div>
+          <div class="about-card-title">Rubik's Cube</div>
+          <div class="about-card-text">Solving cubes — another form of pattern recognition and spatial thinking.</div>
         </div>
       </div>
     </div>
@@ -466,6 +471,15 @@ section{padding:5rem 0}
       <div class="section-line"></div>
     </div>
     <div class="reveal">
+      <div class="exp-card">
+        <div class="exp-icon">⟁</div>
+        <div>
+          <div class="exp-role">National Camper — BDMO</div>
+          <div class="exp-org">Bangladesh Mathematical Olympiad</div>
+          <div class="exp-period">Achieved</div>
+          <div class="exp-desc">Selected as a National Camper at the Bangladesh Mathematical Olympiad (BDMO). Also participated in Physics, Science, and IT Olympiads — building a strong competitive problem-solving background across multiple disciplines.</div>
+        </div>
+      </div>
       <div class="exp-card">
         <div class="exp-icon">∑</div>
         <div>
@@ -610,15 +624,15 @@ section{padding:5rem 0}
       <div class="contact-form">
         <div class="form-group">
           <label class="form-label">your name</label>
-          <input class="form-input" type="text" placeholder="Medha"/>
+          <input class="form-input" id="contactName" type="text" placeholder="Medha"/>
         </div>
         <div class="form-group">
           <label class="form-label">email address</label>
-          <input class="form-input" type="email" placeholder="you@example.com"/>
+          <input class="form-input" id="contactEmail" type="email" placeholder="you@example.com"/>
         </div>
         <div class="form-group">
           <label class="form-label">message</label>
-          <textarea class="form-textarea" placeholder="Hey Muhatarima, I'd love to collaborate on..."></textarea>
+          <textarea class="form-textarea" id="contactMessage" placeholder="Hey Muhatarima, I'd love to collaborate on..."></textarea>
         </div>
         <button class="form-submit" onclick="handleFormSubmit()">Send Message ✦</button>
       </div>
@@ -744,7 +758,20 @@ function closeModalOutside(e){
 
 // FORM
 function handleFormSubmit(){
-  alert('Thanks for reaching out! I\'ll get back to you soon. ✦');
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
+  if(!name || !email || !message){
+    alert('Please fill in all fields before sending.');
+    return;
+  }
+  const subject = encodeURIComponent('Portfolio Contact from ' + name);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n\n' +
+    'Message:\n' + message
+  );
+  window.location.href = 'mailto:muhatarima@gmail.com?subject=' + subject + '&body=' + body;
 }
 
 // SMOOTH ACTIVE NAV
